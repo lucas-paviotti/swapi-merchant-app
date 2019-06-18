@@ -6,7 +6,8 @@ class ClientForm extends React.Component {
     this.state = {
       username: '',
       address: '',
-      planet: ''
+      planet: '',
+      planetList: []
     }
   }
 
@@ -17,6 +18,25 @@ class ClientForm extends React.Component {
       let planet = localStorage.getItem('planet');
       this.setState({ username,address,planet });
     }
+
+    const urls = ['https://swapi.co/api/planets/?page=1',
+      'https://swapi.co/api/planets/?page=2',
+      'https://swapi.co/api/planets/?page=3',
+      'https://swapi.co/api/planets/?page=4',
+      'https://swapi.co/api/planets/?page=5',
+      'https://swapi.co/api/planets/?page=6',
+      'https://swapi.co/api/planets/?page=7',
+    ];
+
+    Promise.all(urls.map(url => {
+      return fetch(url).then(response => response.json())
+    })).then(res => {
+      let arr = [];
+      for (var i = 0; i < res.length; i++) {
+        res[i].results.forEach(e => { arr.push(e.name) })
+      }
+      this.setState({ planetList: arr })
+    }).catch(() => console.log('There was an error while fetching from the API'))
   }
 
   componentWillUnmount() {
@@ -42,6 +62,8 @@ class ClientForm extends React.Component {
   }
 
   render() {
+    const { planetList } = this.state;
+    planetList.sort();
     return (
       <form className="client-information" onSubmit={this.goToApp}>
         <h1>STAR WARS</h1>
@@ -67,7 +89,12 @@ class ClientForm extends React.Component {
 				    <input list="planets" name="planet" onChange={this.handleChange} value={this.state.planet} />  
 				</label>   
 				<datalist id="planets">
-				    <option value="Tatooine" />
+          {planetList.map((planet,i) => {
+            return (
+              <option key={i} value={planet} onChange={this.handleChange} />
+            );
+            })
+          }
 				</datalist>
         <button type="submit"> Go to store </button>
       </form>

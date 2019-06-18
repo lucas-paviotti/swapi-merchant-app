@@ -12,32 +12,44 @@ class App extends React.Component {
 	}
 
 	componentDidMount(){
-	  /*
-		fetch('https://swapi.co/api/starships')
+		const urls = ['https://swapi.co/api/starships/?page=1',
+			'https://swapi.co/api/starships/?page=2',
+			'https://swapi.co/api/starships/?page=3',
+			'https://swapi.co/api/starships/?page=4'
+		];
+
+		/*
+		// I wrote this code below because I didn't like fetching a fixed number of pages. I want to calculate how many pages there are and then add them to array, but I couldn't manage to make it work using promises.
+	  fetch('https://swapi.co/api/starships')
 		.then(response => response.json())
-		.then(ships => {
-			const pages = Math.round(ships.count / 10);
-			for (var i = pages - 1; i >= 0; i--) {
-				if (i !== 1) {
-					fetch('https://swapi.co/api/starships/?page='+ (i + 1))
-					.then(response => response.json())
-					.then(newShips => newShips.results.forEach(e => { ships.results.push(e) }));
-				}
-			}
-			this.setState({ starships: ships });
-		});
-	  */
+		.then(number => {
+			const pages = Math.round(number.count / 10);
+			for (var i = 0; i < pages; i++) {
+				urls.push('https://swapi.co/api/starships/?page='+ (i + 1))
+				console.log(urls);
+			}		
+		})
+		*/
 
-
-
-
+	  Promise.all(urls.map(url => {
+	  	return fetch(url).then(response => response.json())
+	  })).then(res => {
+	  	let arr = [];
+	  	for (var i = 0; i < res.length; i++) {
+	  		res[i].results.forEach(e => { arr.push(e) })
+	  	}
+	  	this.setState({ starships: arr })
+	  }).catch(() => console.log('There was an error while fetching from the API'))
 	}
 
   render() {
-    return (
+  	const { starships } = this.state;
+    return !starships.length ?
+    <h1>Loading</h1> :
+    (
     	<div className='merchant-app'>
-	      <h1>APP</h1>
-	      <CardList/>
+	      <h1>SHIPS IN STORAGE</h1>
+	      <CardList starships={starships} />
 	      <div>
 	      	<Order/>
 	      	<button onClick={() => this.props.history.push(`/checkout`)}> Place Order </button>
