@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 import CardList from '../components/CardList';
 import Order from '../components/Order';
+import './App.css';
 
 class App extends React.Component {
 	constructor() {
@@ -44,6 +44,7 @@ class App extends React.Component {
 
   render() {
   	const { starships } = this.state;
+  	const { history } = this.props;
     return !starships.length ?
     <h1>Loading</h1> :
     (
@@ -51,8 +52,7 @@ class App extends React.Component {
 	      <h1>SHIPS IN STORAGE</h1>
 	      <CardList starships={starships} />
 	      <div>
-	      	<Order/>
-	      	<button onClick={() => this.props.history.push(`/checkout`)}> Place Order </button>
+	      	<Order history={history} />
 	      </div>
 	    </div>
     );
