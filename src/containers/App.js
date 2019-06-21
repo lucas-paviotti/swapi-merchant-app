@@ -7,7 +7,8 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			starships: []
+			starships: [],
+			order: {}
 		}
 	}
 
@@ -40,19 +41,29 @@ class App extends React.Component {
 	  	}
 	  	this.setState({ starships: arr })
 	  }).catch(() => console.log('There was an error while fetching from the API'))
+
 	}
 
+	addToOrder = (key) => {
+		// you get a copy of state
+		const order = { ...this.state.order };
+		// you add one to the corresponding key
+		order[key] = order[key] + 1 || 1;
+		// you set the state
+		this.setState({ order });
+	};
+
   render() {
-  	const { starships } = this.state;
+  	const { starships, order } = this.state;
   	const { history } = this.props;
     return !starships.length ?
     <h1>Loading</h1> :
     (
     	<div className='merchant-app'>
 	      <h1>SHIPS IN STORAGE</h1>
-	      <CardList starships={starships} />
+	      <CardList starships={starships} addToOrder={this.addToOrder} />
 	      <div>
-	      	<Order history={history} />
+	      	<Order starships={starships} order={order} history={history} />
 	      </div>
 	    </div>
     );

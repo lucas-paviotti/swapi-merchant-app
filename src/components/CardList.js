@@ -8,6 +8,7 @@ class CardList extends React.Component {
 			return (
 				<Card
 					key={i}
+					index={'ship'+i}
 					name={starships[i].name}
 					model={starships[i].model}
 					manufacturer={starships[i].manufacturer}
@@ -16,6 +17,7 @@ class CardList extends React.Component {
 					crew={starships[i].crew}
 					passengers={starships[i].passengers}
 					cargo_capacity={starships[i].cargo_capacity}
+					addToOrder={this.props.addToOrder}
 				/>
 			);
 		})

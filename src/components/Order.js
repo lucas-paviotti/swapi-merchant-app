@@ -2,7 +2,7 @@ import React from 'react';
 
 class Order extends React.Component {
 	render() {
-		const {history}=this.props;
+		const { starships, order } = this.props;
 		return (
 			<div className="order" >
 				<div className="shiplist">
