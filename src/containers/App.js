@@ -41,7 +41,6 @@ class App extends React.Component {
 	  	}
 	  	this.setState({ starships: arr })
 	  }).catch(() => console.log('There was an error while fetching from the API'))
-
 	}
 
 	addToOrder = (key) => {
@@ -53,6 +52,17 @@ class App extends React.Component {
 		this.setState({ order });
 	};
 
+	deleteFromOrder = key => {
+		const order = { ...this.state.order };
+		if (order[key] > 1) {
+			order[key] = order[key] - 1;
+			this.setState({ order });
+		} else {
+    	delete order[key];
+    	this.setState({ order });
+		}
+	}
+
   render() {
   	const { starships, order } = this.state;
   	const { history } = this.props;
@@ -63,7 +73,7 @@ class App extends React.Component {
 	      <h1>SHIPS IN STORAGE</h1>
 	      <CardList starships={starships} addToOrder={this.addToOrder} />
 	      <div>
-	      	<Order starships={starships} order={order} history={history} />
+	      	<Order starships={starships} order={order} history={history} deleteFromOrder={this.deleteFromOrder} />
 	      </div>
 	    </div>
     );

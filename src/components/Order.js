@@ -1,20 +1,34 @@
 import React from 'react';
 
 class Order extends React.Component {
+	renderOrder = key => {
+		const starships = this.props.starships[key];
+		const count = this.props.order[key];
+		return <li>
+			{count} {starships.name} <button onClick={() => this.props.deleteFromOrder(key)}>X</button>
+		</li>
+	}
+
 	render() {
-		const { starships, order } = this.props;
+		const orderIds = Object.keys(this.props.order);
+		const total = orderIds.reduce((previous, key) => {
+			const starships = this.props.starships[key];
+			const count = this.props.order[key];
+			return previous + (count * starships.cost_in_credits);
+		}, 0);
+
 		return (
 			<div className="order" >
 				<div className="shiplist">
 					<h2>Ships:</h2>
 					<ul>
-						<li>ship x quantity <button>&times;</button></li>
+						{orderIds.map(this.renderOrder)}
 					</ul>
 				</div>
 				<div className="total">
 					<h2>Total:</h2>
 					<ul>
-						<li>Cost in credits: 0</li>
+						<li>Cost in credits: {total}</li>
 						<li>Crew: 0</li>
 						<li>Passengers: 0</li>
 						<li>Cargo capacity: 0</li>

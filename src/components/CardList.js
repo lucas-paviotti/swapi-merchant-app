@@ -8,7 +8,7 @@ class CardList extends React.Component {
 			return (
 				<Card
 					key={i}
-					index={'ship'+i}
+					index={i}
 					name={starships[i].name}
 					model={starships[i].model}
 					manufacturer={starships[i].manufacturer}
