@@ -28,10 +28,7 @@ class Order extends React.Component {
 				<div className="total">
 					<h2>Total:</h2>
 					<ul>
-						<li>Cost in credits: {total}</li>
-						<li>Crew: 0</li>
-						<li>Passengers: 0</li>
-						<li>Cargo capacity: 0</li>
+						<li>Cost in credits: {total.toLocaleString()}</li>
 					</ul>
 				</div>
 				<button onClick={() => this.props.history.push(`/checkout`)}> Place Order </button>

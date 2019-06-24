@@ -12,7 +12,7 @@ class CardList extends React.Component {
 					name={starships[i].name}
 					model={starships[i].model}
 					manufacturer={starships[i].manufacturer}
-					cost_in_credits={starships[i].cost_in_credits}
+					cost_in_credits={starships[i].cost_in_credits.toLocaleString()}
 					length={starships[i].length}
 					crew={starships[i].crew}
 					passengers={starships[i].passengers}

@@ -2,6 +2,8 @@ import React from 'react';
 import CardList from '../components/CardList';
 import Order from '../components/Order';
 import './App.css';
+import { randomIntFromInterval } from "../helper-functions";
+
 
 class App extends React.Component {
 	constructor() {
@@ -37,7 +39,15 @@ class App extends React.Component {
 	  })).then(res => {
 	  	let arr = [];
 	  	for (var i = 0; i < res.length; i++) {
-	  		res[i].results.forEach(e => { arr.push(e) })
+	  		res[i].results.forEach(e => { 
+	  			if (e.cost_in_credits === "unknown") {
+						e.cost_in_credits = randomIntFromInterval(100000,500000);
+						arr.push(e);
+	  			} else {
+	  				e.cost_in_credits = Number(e.cost_in_credits);
+	  				arr.push(e);
+	  			}
+	  		})
 	  	}
 	  	this.setState({ starships: arr })
 	  }).catch(() => console.log('There was an error while fetching from the API'))
