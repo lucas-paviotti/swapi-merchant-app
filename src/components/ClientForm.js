@@ -66,6 +66,9 @@ class ClientForm extends React.Component {
     planetList.sort();
     return (
       <form className="client-information" onSubmit={this.goToApp}>
+        <div className="stars"></div>
+        <div className="twinkling"></div>
+        <div className="clouds"></div>
         <h1>STAR WARS</h1>
         <h2>Mechant Ship Nexus</h2>
         <h2>Name</h2>

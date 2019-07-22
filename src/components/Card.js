@@ -7,7 +7,7 @@ class Card extends React.Component {
 			<div onClick={() => this.props.addToOrder(this.props.index)}>
 				<img src="" alt=""/>
 				<div>
-					<h2>Name: {name}</h2>
+					<h2>{name}</h2>
 					<p>Model: {model}</p>
 					<p>Manufacturer: {manufacturer}</p>
 					<p>Cost in credits: {cost_in_credits}</p>

@@ -1,7 +1,6 @@
 import React from 'react';
 import CardList from '../components/CardList';
 import Order from '../components/Order';
-import './App.css';
 import { randomIntFromInterval } from "../helper-functions";
 
 
@@ -80,7 +79,7 @@ class App extends React.Component {
     <h1>Loading</h1> :
     (
     	<div className='merchant-app'>
-	      <h1>SHIPS IN STORAGE</h1>
+	      <h1>Ships in storage</h1>
 	      <CardList starships={starships} addToOrder={this.addToOrder} />
 	      <div>
 	      	<Order starships={starships} order={order} history={history} deleteFromOrder={this.deleteFromOrder} />

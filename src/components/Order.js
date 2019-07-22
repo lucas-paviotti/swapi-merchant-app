@@ -4,7 +4,7 @@ class Order extends React.Component {
 	renderOrder = key => {
 		const starships = this.props.starships[key];
 		const count = this.props.order[key];
-		return <li>
+		return <li key={key}>
 			{count} {starships.name} <button onClick={() => this.props.deleteFromOrder(key)}>X</button>
 		</li>
 	}
