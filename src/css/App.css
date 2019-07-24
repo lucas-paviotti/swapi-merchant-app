@@ -14,53 +14,13 @@
   font-style: normal;
 }
 
-/* -------------------- ANIMATIONS ----------------------- */
-
-@keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
-}
-
-@-webkit-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
-}
-
-@-moz-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
-}
-
-@-ms-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
-}
-
-@keyframes move-clouds-back {
-  from {background-position:0 0;}
-  to {background-position:10000px 0;}
-}
-
-@-webkit-keyframes move-clouds-back {
-  from {background-position:0 0;}
-  to {background-position:10000px 0;}
-}
-
-@-moz-keyframes move-clouds-back {
-  from {background-position:0 0;}
-  to {background-position:10000px 0;}
-}
-
-@-ms-keyframes move-clouds-back {
-  from {background-position: 0;}
-  to {background-position:10000px 0;}
-}
-
 /* -------------------- GENERAL STYLES ----------------------- */
 
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 article,
@@ -92,17 +52,18 @@ html {
   font-family: "News Gothic";
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  color: #404040;
 }
 
 body {
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 1em;
 }
 
 h1 {
+  color: #0297b3;
   font-family: "star-wars";
+  font-size: 4rem;
+  line-height: 4.5rem;
 }
 
 /* -------------------- BACKGROUND STYLES ----------------------- */
@@ -147,7 +108,30 @@ h1 {
 
 /* -------------------- CLIENT FORM STYLES ----------------------- */
 
+.client-information {
+  width: 100%;
+  height: 95vh;
+  margin: 0em auto;
+  background-color: #ffffff;
+  background: rgb(255,255,255);
+  background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(215,225,236,0.8) 74%);
+  border: solid 6px #00abc9;
+  text-align: center;
+}
 
+.client-information h1 {
+  font-size: 6rem;
+  margin: 0.2em 0;
+}
+
+.client-information h2 {
+  color: #0297b3;
+}
+
+.client-information p {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
 
 /* -------------------- APP STYLES ----------------------- */
 
@@ -171,4 +155,59 @@ h1 {
 
 .order button {
   flex-grow: 1;
+}
+
+/* -------------------- MEDIA QUERIES ----------------------- */
+
+@media (min-width: 1200px) {
+  body {
+    padding: 2em;
+  }
+
+  .client-information {
+    width: 500px;
+    height: auto;
+  }
+
+/* -------------------- ANIMATIONS ----------------------- */
+
+  @keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+  }
+  
+  @-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+  }
+  
+  @-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+  }
+  
+  @-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+  }
+  
+  @keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+  }
+  
+  @-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+  }
+  
+  @-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+  }
+  
+  @-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+  }
 }

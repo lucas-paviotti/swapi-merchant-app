@@ -70,35 +70,37 @@ class ClientForm extends React.Component {
         <div className="twinkling"></div>
         <div className="clouds"></div>
         <h1>STAR WARS</h1>
-        <h2>Mechant Ship Nexus</h2>
-        <h2>Name</h2>
-        <input
-          name="username"
-          type="text"
-          onChange={this.handleChange}
-          value={this.state.username}
-          required
-        />
-        <h2>Address</h2>
-        <input
-        	name="address"
-          type="text"
-          onChange={this.handleChange}
-          value={this.state.address}
-          required
-        />
-				<label>
-				    <h2>Planet</h2>
-				    <input list="planets" name="planet" onChange={this.handleChange} value={this.state.planet} />  
-				</label>   
-				<datalist id="planets">
-          {planetList.map((planet,i) => {
-            return (
-              <option key={i} value={planet} onChange={this.handleChange} />
-            );
-            })
-          }
-				</datalist>
+        <h2>MERCHANT SHIP NEXUS</h2>
+        <div className="form-fill">
+          <p>Name</p>
+          <input
+            name="username"
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.username}
+            required
+          />
+          <p>Address</p>
+          <input
+            name="address"
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.address}
+            required
+          />
+          <label>
+              <p>Planet</p>
+              <input list="planets" name="planet" onChange={this.handleChange} value={this.state.planet} />  
+          </label>   
+          <datalist id="planets">
+            {planetList.map((planet,i) => {
+              return (
+                <option key={i} value={planet} onChange={this.handleChange} />
+              );
+              })
+            }
+          </datalist>
+        </div>
         <button type="submit"> Go to store </button>
       </form>
     );
