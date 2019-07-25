@@ -101,7 +101,7 @@ class ClientForm extends React.Component {
             }
           </datalist>
         </div>
-        <button type="submit"> Go to store </button>
+        <button type="submit"> GO TO STORE </button>
       </form>
     );
   }

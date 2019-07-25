@@ -75,13 +75,21 @@ class App extends React.Component {
   render() {
   	const { starships, order } = this.state;
   	const { history } = this.props;
-    return !starships.length ?
-    <h1>Loading</h1> :
+		return !starships.length ?
+		<div className="loading-screen">
+			<div className="stars"></div>
+			<div className="twinkling"></div>
+			<div className="clouds"></div>
+			<h1>Loading</h1>
+		</div> :
     (
     	<div className='merchant-app'>
+				<div className="stars"></div>
+        <div className="twinkling"></div>
+        <div className="clouds"></div>
 	      <h1>Ships in storage</h1>
 	      <CardList starships={starships} addToOrder={this.addToOrder} />
-	      <div>
+	      <div className="order-tab">
 	      	<Order starships={starships} order={order} history={history} deleteFromOrder={this.deleteFromOrder} />
 	      </div>
 	    </div>
