@@ -229,6 +229,7 @@ h1 {
 
 /* -------------------- APP STYLES ----------------------- */
 
+/*
 .order {
   position: fixed;
   display: flex;
@@ -238,30 +239,111 @@ h1 {
   background-color: white;
   padding: 1em;
 }
+*/
+
+.order {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 0 1em 0 1em;
+}
+
+.order ul {
+  padding: 1em;
+}
+
+.order li {
+  list-style-type: none;
+  border-top: #404040 solid 1px;
+  padding: 1em 0.5em;
+  text-transform: uppercase;
+}
+
+.order li button {
+  float: right;
+  background: none;
+  font-weight: bolder;
+  color: black;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.title-bar {
+  margin: 1em 0 1em 0;
+  text-align: center;
+}
+
+.hamburger-menu {
+  position: absolute;
+  right: 1em;
+  top: 1.2em;
+}
+
+.hamburger-menu div {
+  width: 20px;
+  height: 3px;
+  background-color: rgb(56, 56, 56);
+  margin: 4px;
+}
 
 .shiplist{
-  flex-grow: 2;
+  flex-grow: 12;
 }
 
 .total{
-  flex-grow: 2;
+  flex-grow: 1;
 }
 
-.order button {
-  flex-grow: 1;
+.submit-button {
+  margin: 0 auto 2em auto;
+  background-color: #0297b3;
+  border: none;
+  text-transform: uppercase;
+  padding: 1em 1em;
+  font-weight: bolder;
+  color: white;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.submit-button:hover {
+  background-color: #00738a;
+  transition: 1s;
 }
 
 /* -------------------- THANKS COMPONENT STYLES ----------------------- */
 
 /* -------------------- MEDIA QUERIES ----------------------- */
 
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
+  .client-information {
+    width: 500px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
   body {
     padding: 2em;
   }
 
-  .client-information {
-    width: 500px;
-    height: auto;
+  .order {
+    width: 30%;
+  }
+
+  .order li {
+    list-style-type: none;
+    border-top: #404040 solid 1px;
+    text-transform: uppercase;
+  }
+
+  .hamburger-menu {
+    display: none;
   }
 }

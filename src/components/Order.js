@@ -19,6 +19,14 @@ class Order extends React.Component {
 
 		return (
 			<div className="order" >
+				<div className="title-bar">
+					<h2>Order</h2>
+					<div className="hamburger-menu">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
 				<div className="shiplist">
 					<h2>Ships:</h2>
 					<ul>
@@ -31,7 +39,7 @@ class Order extends React.Component {
 						<li>Cost in credits: {total.toLocaleString()}</li>
 					</ul>
 				</div>
-				<button onClick={() => this.props.history.push(`/checkout`)}> Place Order </button>
+				<button className="submit-button" onClick={() => this.props.history.push(`/checkout`)}> Place Order </button>
 			</div>
 		);
 	}
