@@ -9,7 +9,8 @@ class App extends React.Component {
 		super();
 		this.state = {
 			starships: [],
-			order: {}
+			order: {},
+			isOrderVisible: false
 		}
 	}
 
@@ -72,9 +73,13 @@ class App extends React.Component {
 		}
 	}
 
+	toggleOrder = () => {
+		this.setState(prevState => ({ isOrderVisible: !prevState.isOrderVisible }));
+	};
+
   render() {
-  	const { starships, order } = this.state;
-  	const { history } = this.props;
+  	const { starships, order, isOrderVisible } = this.state;
+		const { history } = this.props;
 		return !starships.length ?
 		<div className="loading-screen">
 			<div className="stars"></div>
@@ -86,11 +91,10 @@ class App extends React.Component {
     	<div className='merchant-app'>
 				<div className="stars"></div>
         <div className="twinkling"></div>
-        <div className="clouds"></div>
 	      <h1>Ships in storage</h1>
 	      <CardList starships={starships} addToOrder={this.addToOrder} />
 	      <div className="order-tab">
-	      	<Order starships={starships} order={order} history={history} deleteFromOrder={this.deleteFromOrder} />
+	      	<Order starships={starships} order={order} history={history} isOrderVisible={isOrderVisible} deleteFromOrder={this.deleteFromOrder} toggleOrder={this.toggleOrder} />
 	      </div>
 	    </div>
     );

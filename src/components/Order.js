@@ -16,10 +16,11 @@ class Order extends React.Component {
 			const count = this.props.order[key];
 			return previous + (count * starships.cost_in_credits);
 		}, 0);
+		const isOrderVisible = this.props.isOrderVisible;
 
 		return (
-			<div className="order" >
-				<div className="title-bar">
+			<div className={isOrderVisible ? "order" : "order order-active"} >
+				<div className="title-bar" onClick={() => this.props.toggleOrder()}>
 					<h2>Order</h2>
 					<div className="hamburger-menu">
 						<div></div>

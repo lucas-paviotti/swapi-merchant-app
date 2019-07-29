@@ -68,7 +68,6 @@ class ClientForm extends React.Component {
       <form className="client-information" onSubmit={this.goToApp}>
         <div className="stars"></div>
         <div className="twinkling"></div>
-        <div className="clouds"></div>
         <h1>STAR WARS</h1>
         <h2>MERCHANT SHIP NEXUS</h2>
         <div className="form-fill">

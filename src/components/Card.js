@@ -4,8 +4,7 @@ class Card extends React.Component {
 	render() {
 		const { name, model, manufacturer, cost_in_credits, length, crew, passengers, cargo_capacity } = this.props;
 		return (
-			<div onClick={() => this.props.addToOrder(this.props.index)}>
-				<img src="" alt=""/>
+			<div className="card" onClick={() => this.props.addToOrder(this.props.index)}>
 				<div>
 					<h2>{name}</h2>
 					<p>Model: {model}</p>
