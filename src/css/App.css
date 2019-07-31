@@ -310,6 +310,59 @@ h1 {
 
 /* -------------------- THANKS COMPONENT STYLES ----------------------- */
 
+.thanks-component {
+  width: 500px;
+  height: auto;
+  margin: 0em auto;
+  background-color: #ffffff;
+  background: rgb(255,255,255);
+  background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(215,225,236,0.8) 74%);
+  border: solid 6px #00abc9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.thanks-component h1 {
+  margin: 0.5em 0 0.2em 0;
+  font: 1000 3rem "News Gothic";
+  text-transform: uppercase;
+}
+
+.thanks-component h2 {
+  margin-bottom: 0.8em;
+  color: #5B5B5B;
+  text-transform: uppercase;
+}
+
+.thanks-component p {
+  margin: 0.5em auto 0.5em auto;
+  text-align: left;
+  width: 90%;
+  font-size: 1rem;
+}
+
+.thanks-component button {
+  color: white;
+  text-transform: capitalize;
+  text-align: center;
+  cursor: pointer;
+  background-color: #0297b3;
+  box-sizing: border-box;
+  font: 1000 1rem "News Gothic";
+  padding: 0.5em;
+  margin: 1.5em auto 2em auto;
+  border: none;
+  transition: 1s;
+}
+
+.thanks-component button:hover {
+  background-color: #00738a;
+  transition: 1s;
+}
+
 /* -------------------- MEDIA QUERIES ----------------------- */
 
 @media screen and (max-width: 500px) {
@@ -344,6 +397,11 @@ h1 {
   .card-info h2 {
     text-align: center;
     margin-bottom: 0.8em;
+  }
+
+  .thanks-component {
+    width: 100%;
+    height: 95vh;
   }
 }
 

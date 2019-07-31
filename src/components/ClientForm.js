@@ -69,7 +69,7 @@ class ClientForm extends React.Component {
         <div className="stars"></div>
         <div className="twinkling"></div>
         <h1>STAR WARS</h1>
-        <h2>MERCHANT SHIP NEXUS</h2>
+        <h2>BLACK MARKET SHIP NEXUS</h2>
         <div className="form-fill">
           <p>Name</p>
           <input

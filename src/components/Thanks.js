@@ -9,12 +9,14 @@ class Thanks extends React.Component {
 
   render() {
     return (
-      <div>
-      	<h2>Dear {localStorage.getItem('username')},</h2>
-      	<p>Thank you for your order.</p>
-      	<p>A guild's representative will arrive in {localStorage.getItem('address')} on {localStorage.getItem('planet')} soon in order to process payment</p>
+      <div className="thanks-component">
+        <div className="stars"></div>
+        <div className="twinkling"></div>
+      	<h1>Dear {localStorage.getItem('username')},</h1>
+      	<h2>Thank you for your order.</h2>
+      	<p>A representative will arrive in {localStorage.getItem('address')} on {localStorage.getItem('planet')} soon in order to process payment</p>
       	<p>Best regards,</p>
-      	<p>The Galactic Federation (Github: @Imhest).</p>
+      	<p>The Black Market (Github: @Imhest).</p>
       	<button onClick={this.clearAndGo}>Back to start</button>
       </div>
     );
