@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/swapi-merchant-app/static/css/main.cd1834c5.chunk.css",
+    "main.js": "/swapi-merchant-app/static/js/main.78ae21f7.chunk.js",
+    "main.js.map": "/swapi-merchant-app/static/js/main.78ae21f7.chunk.js.map",
+    "runtime~main.js": "/swapi-merchant-app/static/js/runtime~main.49148ff8.js",
+    "runtime~main.js.map": "/swapi-merchant-app/static/js/runtime~main.49148ff8.js.map",
+    "static/js/2.0776aad9.chunk.js": "/swapi-merchant-app/static/js/2.0776aad9.chunk.js",
+    "static/js/2.0776aad9.chunk.js.map": "/swapi-merchant-app/static/js/2.0776aad9.chunk.js.map",
+    "index.html": "/swapi-merchant-app/index.html",
+    "precache-manifest.c2b28e5a24c5d3110d66c4f758982a61.js": "/swapi-merchant-app/precache-manifest.c2b28e5a24c5d3110d66c4f758982a61.js",
+    "service-worker.js": "/swapi-merchant-app/service-worker.js",
+    "static/css/main.cd1834c5.chunk.css.map": "/swapi-merchant-app/static/css/main.cd1834c5.chunk.css.map",
+    "static/media/App.css": "/swapi-merchant-app/static/media/stars.6494ab5b.png"
+  }
+}
